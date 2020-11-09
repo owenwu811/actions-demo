@@ -1,0 +1,13 @@
+name: Say hello to everyone
+on: push
+
+jobs:
+  build:
+    name: Say hello
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - uses: ./hello-actions
+        with:
+          MY_NAME: "Caleb"
