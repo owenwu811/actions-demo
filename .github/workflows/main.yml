@@ -1,5 +1,7 @@
-name: Say hello to everyone
-on: push
+name: Greet Everyone
+
+on:
+  push
 
 jobs:
   build:
@@ -7,7 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      
-      - uses: ./hello-actions
+
+      - name: Execute Hello Actions
+        description: Greet everyone by running the "hello-actions" action.
+        uses: ./hello-actions@v1
         with:
-          MY_NAME: "Caleb"
+          name: "Caleb"
